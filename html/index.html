@@ -1,0 +1,706 @@
+<!-- Made by TORCHIZM first big NUI project :)) -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+    <link rel="canonical" href="https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body style="display: none;">
+    <div id="zoom-container">
+        <img id="citizen-zoomed-image" />
+    </div>
+
+    <div class="mdt center" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0;">
+        <!-- Sidebar Start -->
+        <div id="sidebar" class="sidebar" style="display: flex; width: 300px; transform-origin: left; transform: scale(0, 1);">
+            <div>
+                <i class="fas fa-shield-alt" style="font-size: 36px; color: white;"></i>
+                <i id="closeNav" class="fa fa-angle-left" style="font-size: 36px; color: white; cursor: hand;"></i>
+            </div>
+            <div id="eventsBtn">
+                <span><i class="fa fa-calendar-o" aria-hidden="true" style="margin: 8px;"></i>Olaylar</span>
+            </div>
+            <div id="departmentBtn">
+                <span><i class="fa fa-id-card" aria-hidden="true" style="margin: 8px;"></i>Departman</span>
+            </div>
+            <div id="reportsBtn">
+                <span><i class="fa fa-file-text" aria-hidden="true" style="margin: 8px;"></i>Raporlar</span>
+            </div>
+            <div id="finesBtn">
+                <span><i class="fa fa-money" aria-hidden="true" style="margin: 8px;"></i>Cezalar</span>
+            </div>
+            <div id="evidence-btn">
+                <span><i class="fa fa-sticky-note" aria-hidden="true" style="margin: 8px;"></i>Delil Arşivi</span>
+            </div>
+        </div>
+        <!-- Sidebar End-->
+        <div class="topnav">
+            <div class="logoNav" style="justify-content: space-between;">
+                <div class="logoNav" style="flex: 1 0 50%;">
+                    <div style="margin-right: 16px;">
+                        <i id="sidebarIcon" style="font-size: 32px; color: white; cursor: hand;" class="fas fa-list"></i>
+                    </div>
+                    <div class="verticalHr" style="height: 50px; width: 4px; background-color: white;"></div>
+                    <div style="display:flex; flex-direction: row; width: 100%; flex: 1 0 50%; margin-left: 16px;">
+                        <p id="mainPageBtn" class="color-white" style="cursor: hand; display: flex; flex-direction: row;">
+                            <i class="fas fa-shield-alt" style="font-size: 36px; color: white;"></i> LSPD | MDW
+                        </p>
+                    </div>
+                </div>
+                <div id="searchNav" class="logoNav" style="padding: 0 !important;">
+                    <div class="search" style="width: 100%;">
+                        <input id="search-box" type="text" class="text" placeholder="&#xF002; Kişi, araç plakası veya seri numarası..." />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="horizontal-center">
+            <div id="homePage" style="display: block; background: var(--primary); border-radius: 4px; height: 100%; overflow: hidden;">
+                <!-- <div class="row" style="justify-content: none !important;">
+                    <span id="welcome-message" style="color: white; font-size: 20px;">İyi günler</span>
+                </div> -->
+                <div class="row">
+                    <div class="homepage-box">
+                        <div class="homepage-box-header" style="position: relative; justify-content: space-between;">
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                                <span id="todays-report-count" class="something-count"></span>
+                                <div class="todays-report-statics">
+                                    <span>Yeni</span>
+                                    <span>Rapor</span>
+                                </div>
+                                <i style="margin: 8px;" class="fa fa-paperclip" aria-hidden="true"></i>
+                            </div>
+
+                            <div id="all-reports-btn" class="btn">
+                                <div>
+                                    <span>Tümünü Gör</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="homepage-box-content">
+                            <div class="none">
+                                <span>Bugün yeni kayıt yok :(</span>
+                            </div>
+                            <!-- <div class="homepage-report-box">
+                                <span>Test Başlık</span>
+                                <span>Market soygununda yakalanan şüphelilerin verdikleri ifadeler kendilerinin yapmadığı yönündeydi.</span>
+                                <span>4.04.2021 00:18</span>
+                            </div> -->
+                        </div>
+
+                        <div class="homepage-box-header" style="position: relative; justify-content: space-between;">
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                                <span id="total-wanted-count" class="something-count"></span>
+                                <div class="todays-report-statics">
+                                    <span>Kişi</span>
+                                    <span>Aranıyor</span>
+                                </div>
+                                <i style="margin: 8px;" class="fa fa-users" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div id="wanted-container" class="wanted-container">
+                            <div class="none">
+                                <span>Şuanda kimse aranmıyor</span>
+                            </div>
+                            <!-- <div class="citizen-result-card" style="border: 2px solid var(--secondary); border-radius: 8px; margin: 4px !important;">
+                                <img src="https://cdn.discordapp.com/attachments/833463851550769222/833547585590788136/blank-profile-picture-973460_1280.png" />
+                                <div>
+                                    <span>M4L KAĞAN</span>
+                                    <span>#00001111</span>
+                                </div>
+                                <div>
+                                    <span>Doğum Tarihi</span>
+                                    <span>01.01.1996</span>
+                                </div>
+                                <div>
+                                    <span>Meslek</span>
+                                    <span>Polis</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="events" style="display: none;">
+                <div class="middle-box">
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div id="department" class="page" style="display: none;">
+                <div class="container">
+                    <span class="title">Amir</span>
+                    <div class="cops">
+                        <div class="copCard">
+                            <img src="https://avatars.githubusercontent.com/u/60662894?s=400&u=da7dc6ef8ee420958de5b9fa84a5acf94a07ca83&v=4"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>İdris Kocaman</span>
+                                    <span>101</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copCard">
+                            <img src="https://cdn.discordapp.com/attachments/843535570855657492/862702127012511785/wJkw4kRvKmVaQAAAABJRU5ErkJggg.png"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>Kenan Dede</span>
+                                    <span>102</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copCard">
+                            <img src="https://avatars.githubusercontent.com/u/60662894?s=400&u=da7dc6ef8ee420958de5b9fa84a5acf94a07ca83&v=4"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>Faysal Denli</span>
+                                    <span>145</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="title">Baş Polis</span>
+                    <div class="cops">
+                        <div class="copCard">
+                            <img src="https://avatars.githubusercontent.com/u/60662894?s=400&u=da7dc6ef8ee420958de5b9fa84a5acf94a07ca83&v=4"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>Ace Blaze</span>
+                                    <span>306</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copCard">
+                            <img src="https://avatars.githubusercontent.com/u/60662894?s=400&u=da7dc6ef8ee420958de5b9fa84a5acf94a07ca83&v=4"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>Poyraz Ateş</span>
+                                    <span>307</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="title">Kıdemli Memur</span>
+                    <div class="cops">
+                        <div class="copCard">
+                            <img src="https://avatars.githubusercontent.com/u/60662894?s=400&u=da7dc6ef8ee420958de5b9fa84a5acf94a07ca83&v=4"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>Evren Çıkar</span>
+                                    <span>400</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="title">Memur III</span>
+                    <div class="cops">
+                        <div class="copCard">
+                            <img src="https://avatars.githubusercontent.com/u/60662894?s=400&u=da7dc6ef8ee420958de5b9fa84a5acf94a07ca83&v=4"></img>
+                            <div style="margin: 12px;">
+                                <div class="copCardDetails">
+                                    <span>Hüseyin Özçelik</span>
+                                    <span>430</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="page" id="users" style="display: none;">
+                <div class="userDetails">
+                    <div class="userInfoContainer" style="padding: 8px; border-radius: 4px; margin-right: 4px;">
+                        <div class="userPersonalInfo" style="position: relative;">
+                            <div style="position: relative;">
+                                <img id="citizen-image"></img>
+                                <div style="position: absolute; display: flex; flex-direction: row; justify-content: space-between; left: 0; bottom: 0; margin: 4px; text-shadow: 2px 2px black; width: 100%;">
+                                    <i id="citizen-zoom-image" class="fa fa-search" aria-hidden="true"></i>
+                                    <i id="citizen-take-image" class="fa fa-plus" aria-hidden="true" style="margin-right: 8px;"></i>
+                                </div>
+                            </div>
+                            <div class="citizenInfo">
+                                <span id="user-name"></span>
+                                <span id="user-citizenid"></span>
+                            </div>
+                            <div class="wanted-circle"></div>
+                        </div>
+                        <div class="userCityInfo">
+                            <span class="userBadge"><i class="fas fa-info-circle"></i></span>
+                            <div class="userProperty">
+                                <span>Banka</span>
+                                <span id="user-bank-amount"></span>
+                            </div>
+                            <div class="userProperty">
+                                <span>Doğum Tarihi</span>
+                                <span id="user-dob"></span>
+                            </div>
+                            <div class="userProperty">
+                                <span>Telefon Numarası</span>
+                                <div style="display: flex; flex-direction: row;">
+                                    <span id="user-phone-number" style="color: white; font-size: 16px;"></span>
+                                    <i class="fas fa-phone" style="margin-left: 8px;"></i>
+                                </div>
+                            </div>
+                            <div class="userProperty">
+                                <span>Meslek</span>
+                                <span id="user-job-label"></span>
+                            </div>
+                            <div class="userProperty">
+                                <span>Cinsiyet</span>
+                                <span id="user-gender"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="otherInfoContainer" style="height: 100%;">
+                        <div id="user-included-reports" class="otherInfo" style="flex: 1 0 70%; flex-direction: row; flex-wrap: wrap; width: 100%; padding: 8px;">
+                            <!-- <div class="criminalRecordCard" style="padding: 0px; position: relative;">
+                                <div class="peopleInfo">
+                                    <div>
+                                        2 Suçlu
+                                    </div>
+                                    <div>
+                                        4 Polis
+                                    </div>
+                                </div>
+                                <div class="criminalRecordTitle">
+                                    <span style="margin: 0 !important;">790. Suç Kaydı</span>
+                                </div>
+                                <div class="criminalRecordContent">
+                                    <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                                    <span class="date">3.04.2021 18:02</span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="propertyContainer">
+                        <div style="margin-bottom: 6px;">
+                        </div>
+                        <div id="user-property" class="propertyInfo">
+                            <!-- <div class="propertyCard">
+                                <span><i class="fas fa-car-alt"></i>Zentorno</span>
+                                <span class="plate">31 KGB 6251</span>
+                            </div>
+                            <div class="propertyCard">
+                                <span><i class="fas fa-home"></i>Ev</span>
+                                <span class="plate">Los Santos Avenue. No. 16860</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="reports" style="display: none;">
+                <div class="subNav">
+                    <div id="addReport" class="addReport">
+                        <i class="fas fa-plus" style="font-size: 20px; color: white;"></i>
+                        <span>Rapor Ekle</span>
+                    </div>
+                    <div class="reportsInfo">
+                        <span id="reportCountLabel">Toplam 0 kayıt bulundu.</span>
+                    </div>
+                </div>
+                <div class="otherInfoContainer">
+                    <div id="reportsContainer" class="otherInfo" style="height: auto; flex: 1 0 70%; flex-direction: row; flex-wrap: wrap; width: 100%; padding: 8px;">
+                        <!-- <div class="criminalRecordCard" style="padding: 0px; position: relative;">
+                            <div class="peopleInfo">
+                                <div>
+                                    2 Suçlu
+                                </div>
+                                <div>
+                                    4 Polis
+                                </div>
+                            </div>
+                            <div class="criminalRecordTitle">
+                                <span style="margin: 0 !important;">790. Suç Kaydı</span>
+                            </div>
+                            <div class="criminalRecordContent">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <span class="date">3.04.2021 18:02</span>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div id="previous" class="paginationButton">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span style="margin-left: 8px;">Geri</span>
+                    </div>
+                    <div id="pages">
+                        <span>Sayfa</span>
+                        <span id="currentPage">1</span>
+                        <span>/</span>
+                        <span id="maxPage">2</span>
+                    </div>
+                    <div id="next" class="paginationButton">
+                        <span style="margin-right: 8px;" ">İleri</span>
+                        <i class="fa fa-angle-right " aria-hidden="true "></i>
+                    </div>
+                </div>
+            </div>
+            <div id="addReportPage" class="addReportPage" style="display: none; ">
+                <div class="row">
+                    <div class="left ">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="column ">
+                            <span id="new-report-id">#0</span>
+                            <span>Sayılı Dosya</span>
+                        </div>
+                        <div class="row">
+                            <button id="saveReport">
+                                <i class="fas fa-save"></i>
+                                <p>Kaydet</p>
+                            </button>
+                            <button id="reportGoBack">
+                                <i class="fas fa-undo"></i>
+                                <p>Geri Git</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <input id="new-document-title" type="text " placeholder="Dosya başlığı... "/>
+                    </div>
+                </div>
+                <div class="row" style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; ">
+                    <div style="width: 100%;">
+                        <textarea id="new-document-content" type="text " placeholder="Dosya içeriği... "></textarea>
+                    </div>
+                </div>
+                <div id="selectPeople" class="row " style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; align-items: flex-start; ">
+                    <div class="selectField ">
+                        <span style="color: white; font-weight: 700; margin-bottom: 8px;">Suçlular</span>
+                        <div style="width: 100%; margin-right: 8px;">
+                            <select id="criminalsInput">
+                            </select>
+                        </div>
+                        <div id="criminalContainer" stlye="display: flex; flex-direction: row;">
+                            <!-- <div class="personContainer ">
+                                <span>basaramadik_abi</span>
+                                <i class="fas fa-trash "></i>
+                            </div>
+                            <div class="personContainer ">
+                                <span>kemalbaranuckan</span>
+                                <i class="fas fa-trash "></i>
+                            </div>
+                            <div class="personContainer ">
+                                <span>char_yusuf</span>
+                                <i class="fas fa-trash "></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="verticalHr " style="background: white; width: 4px; height: 32px; "></div>
+                    <div class="selectField ">
+                        <span style="color: white; font-weight: 700; margin-bottom: 8px; ">Polisler</span>
+                        <div style="width: 100%; ">
+                            <select id="copsInput">
+                            </select>
+                        </div>
+                        <div id="copContainer" stlye="display: flex; flex-direction: column; ">
+                            <!-- <div class="personContainer ">
+                                <span>efe6ntas</span>
+                                <i class="fas fa-trash "></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- nerdesin la -->
+                    <div class="verticalHr" style="background: white; width: 4px; height: 32px; "></div>
+                    <div class="selectField ">
+                        <div style="width: 100%; ">
+                            <select id="crimesInput">
+                            </select>
+                        </div>
+                        <div id="crimesContainer" stlye="display: flex; flex-direction: column; ">
+                            <!-- <div class="fineContainer ">
+                                <span style="flex: 1; ">onun kalbini çalmak</span>
+                                <input data-fine-type="cash " class="fineAmount " type="text " placeholder="Miktar "></input>
+                                <i class="fas fa-broom "></i>
+                                <i class="fas fa-trash fineDeleter "></i>
+                            </div> -->
+                        </div>
+                        <div id="totalFine" class="totalFine " style="display: flex; flex-direction: row; ">
+                            <div id="broom">
+                                <span>0</span>
+                                <i class="fas fa-broom "></i>
+                            </div>
+                            <div class="verticalHr " style="background: white; width: 4px; height: 16px; "></div>
+                            <div id="jail">
+                                <span>0</span>
+                                <i class="fas fa-border-none "></i>
+                            </div>
+                            <div class="verticalHr " style="background: white; width: 4px; height: 16px; "></div>
+                            <div id="cash">
+                                <span>0</span>
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row " style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; ">
+                    <div style="width: 100%; ">
+                        <div class="photoContainer">
+                            <input id="photoURL" placeholder="Opsiyonel fotoğraf bağlantısı... (sadece png, jpg veya jpeg uzantıları) "/>
+                            <i id="take-report-photo" class="fas fa-camera "></i>
+                        </div>
+                        <div class="reportPhotoContainer ">
+                            <img id="report-photo"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fines " style="display: none;">
+                <div class="middle-box ">
+                    fines
+                </div>
+            </div>
+            <div id="search-page" style="display: none; ">
+                <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; color:white !important; ">
+                    <div id="citizen-results" class="propertyInfo ">
+                        <!-- <div class="citizen-result-card ">
+                            <img src="https://cdn.discordapp.com/attachments/833463851550769222/833547585590788136/blank-profile-picture-973460_1280.png "/>
+                            <div>
+                                <span>M4L KAĞAN</span>
+                                <span>#00001111</span>
+                            </div>
+                            <div>
+                                <span>Doğum Tarihi</span>
+                                <span>01.01.1996</span>
+                            </div>
+                            <div>
+                                <span>Meslek</span>
+                                <span>Polis</span>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div id="report-results" style="width: 100%; ">
+                        <!-- <div class="report-result-card ">
+                            <div class="peopleInfo " style="height: auto !important; font-weight: 700; ">
+                                <div>
+                                    2 Suçlu
+                                </div>
+                                <div>
+                                    4 Polis
+                                </div>
+                            </div>
+                            <div class="criminalRecordTitle ">
+                                <span style="margin: 0 !important; font-weight: 700; ">790. Suç Kaydı</span>
+                            </div>
+                            <div class="criminalRecordContent ">
+                                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                                <span class="date ">3.04.2021 18:02</span>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div id="property-results" class="propertyInfo ">
+                        <!-- <div class="propertyCard ">
+                            <span><i class="fas fa-home "></i>Ev</span>
+                            <span class="plate ">Los Santos Avenue. No. 16860</span>
+                        </div>
+                        <div class="propertyCard ">
+                            <span><i class="fas fa-car "></i>Zentorno</span>
+                            <span class="plate ">16 afb 9875</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div id="reportDetails" class="addReportPage " style="display: none; ">
+                <div class="row ">
+                    <div class="left " style="margin: 0px 0px 0px 16px !important ">
+                        <i class="fas fa-file-alt "></i>
+                        <div class="column">
+                            <span id="report-id">#0</span>
+                            <span>Sayılı Dosya</span>
+                        </div>
+                        <span id="document-title" type="text " style="font-size: 27px; "></span>
+                        <i id="delete-report" class="fas fa-trash delete "></i>
+                    </div>
+                </div>
+                <div class="row" style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; ">
+                    <div style="width: 100%;">
+                        <span id="document-content" type="text " style="color: white; "></span>
+                    </div>
+                </div>
+                <div id="selectPeople" class="row" style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; align-items: flex-start; ">
+                    <div class="selectField">
+                        <span style="color: white; font-weight: 700; margin-bottom: 8px; ">Suçlular</span>
+                        <div id="d-criminalContainer" stlye="display: flex; flex-direction: row; ">
+                            <!-- <div class="personContainer ">
+                                <span>basaramadik_abi</span>
+                                <i class="fas fa-trash "></i>
+                            </div>
+                            <div class="personContainer ">
+                                <span>kemalbaranuckan</span>
+                                <i class="fas fa-trash "></i>
+                            </div>
+                            <div class="personContainer ">
+                                <span>char_yusuf</span>
+                                <i class="fas fa-trash "></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="verticalHr" style="background: white; width: 4px; height: 32px; "></div>
+                    <div class="selectField ">
+                        <span style="color: white; font-weight: 700; margin-bottom: 8px; ">Polisler</span>
+                        <div id="d-copContainer" stlye="display: flex; flex-direction: column; ">
+                            <!-- <div class="personContainer ">
+                                <span>efe6ntas</span>
+                                <i class="fas fa-trash "></i>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="verticalHr " style="background: white; width: 4px; height: 32px; "></div>
+                    <div class="selectField">
+                        <div id="d-crimesContainer" stlye="display: flex; flex-direction: column; ">
+                            <!-- <div class="fineContainer ">
+                                <span style="flex: 1; ">onun kalbini çalmak</span>
+                                <input data-fine-type="cash " class="fineAmount " type="text " placeholder="Miktar "></input>
+                                <i class="fas fa-broom "></i>
+                                <i class="fas fa-trash fineDeleter "></i>
+                            </div> -->
+                        </div>
+                        <div id="d-totalFine" class="totalFine " style="display: flex; flex-direction: row; ">
+                            <div id="broom">
+                                <span>0</span>
+                                <i class="fas fa-broom"></i>
+                            </div>
+                            <div class="verticalHr" style="background: white; width: 4px; height: 16px; "></div>
+                            <div id="jail">
+                                <span>0</span>
+                                <i class="fas fa-border-none"></i>
+                            </div>
+                            <div class="verticalHr" style="background: white; width: 4px; height: 16px; "></div>
+                            <div id="cash">
+                                <span>0</span>
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row " style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; ">
+                    <div style="width: 100%; ">
+                        <div class="reportPhotoContainer ">
+                            <img id="d-reportPhoto"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="evidence-page" style="display: none; ">
+                <div class="subNav ">
+                    <div id="add-evidence" class="addReport ">
+                        <i class="fas fa-plus " style="font-size: 20px; color: white; "></i>
+                        <span>Delil Ekle</span>
+                    </div>
+                    <div class="reportsInfo ">
+                        <span id="evidence-count-label">Toplam 0 delil bulundu.</span>
+                    </div>
+                </div>
+                <div class="otherInfoContainer">
+                    <div id="evidence-container" class="otherInfo" style="height: auto; flex: 1 0 70%; flex-direction: row; flex-wrap: wrap; width: 100%; padding: 8px; ">
+                        <!-- <div class="evidence-card " style="padding: 0px; position: relative; ">
+                            <div class="evidence-title ">
+                                <span style="margin: 0 !important; ">790. Delil</span>
+                            </div>
+                            <div class="evidence-contents ">
+                                <div class="evidence-field ">
+                                    <p>Seri Numarası</p>
+                                    <p>GFASD3162645</p>
+                                </div>
+                                <div class="evidence-field ">
+                                    <p>Not</p>
+                                    <p>Banka soygununda TORCHIZM kişisinde yakalandı. Daha önce OKANBOI adlı Başmemur kullanıyordu.</p>
+                                </div>
+                                <div class="evidence-field ">
+                                    <p>Rapor Numarası</p>
+                                    <p>7</p>
+                                </div>
+                            </div>
+                            <span class="date " style="margin: 8px; ">3.04.2021 18:02</span>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div id="previousEvidence" class="paginationButton">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span style="margin-left: 8px;">Geri</span>
+                    </div>
+                    <div id="pages">
+                        <span>Sayfa</span>
+                        <span id="currentEvidencePage">1</span>
+                        <span>/</span>
+                        <span id="maxEvidencePage">2</span>
+                    </div>
+                    <div id="nextEvidence" class="paginationButton">
+                        <span style="margin-right: 8px;" ">İleri</span>
+                        <i class="fa fa-angle-right " aria-hidden="true "></i>
+                    </div>
+                </div>
+            </div>
+            <div id="new-evidence-page" class="new-evidence-page " style="display: none; ">
+                <div class="row ">
+                    <div class="left ">
+                        <i class="fas fa-file-alt "></i>
+                        <div class="column ">
+                            <span id="new-evidence-id">#0</span>
+                            <span>Sayılı Delil</span>
+                        </div>
+                        <div class="row ">
+                            <button id="save-evidence">
+                                <i class="fas fa-save"></i>
+                                <p>Kaydet</p>
+                            </button>
+                            <button id="evidence-go-back">
+                                <i class="fas fa-undo "></i>
+                                <p>Geri Git</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="right " style="display: flex; flex-direction: row; ">
+                        <input style="margin-right: 8px; " id="new-evidence-serial-number" type="text " placeholder="Seri Numarası... "/>
+                        <input style="margin-left: 8px; " id="new-evidence-report-id" type="text " placeholder="İlgili rapor numarası... "/>
+                    </div>
+                </div>
+                <div class="row " style="width: calc(100% - 24px); height: calc(100% - 140px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; ">
+                    <div style="width: 100%; height: 100%; ">
+                        <textarea style="height: 100% " id="new-evidence-note" type="text " placeholder="Delil notu... "></textarea>
+                    </div>
+                </div>
+            </div>
+            <div id="evidence-details-page" class="addReportPage" style="display: none; ">
+                <div class="row ">
+                    <div class="left " style="margin: 0px 0px 0px 16px !important ">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="column ">
+                            <span id="evidence-id">#0</span>
+                            <span>Sayılı Delil</span>
+                        </div>
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; ">
+                            <span id="evidence-serial-number" type="text " style="font-size: 27px; "></span>
+                            <span id="evidence-report-id" type="text " style="font-size: 27px; "></span>
+                        </div>
+                        <i id="delete-evidence" class="fas fa-trash delete "></i>
+                    </div>
+                </div>
+                <div class="row " style="width: calc(100% - 24px); border-radius: 8px; padding: 24px; background: var(--primary); margin: 20px; ">
+                    <div style="width: 100%; ">
+                        <span id="evidence-note" type="text " style="color: white; "></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js "></script>
+</body>
+</html>

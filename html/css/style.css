@@ -1,0 +1,1398 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.25s;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --darkBlue: #314662;
+    --white: #ffffff;
+    --black: #000000;
+    --lightgray: #999999;
+
+    --primary: #1d2133;
+    --secondary: #555d80;
+    --tertiary: #c95d69;
+    --hover: #3c4880;
+}
+
+.mdt {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 70%;
+    background-color: var(--secondary);
+    border: 8px solid rgb(27, 22, 22);
+    border-radius: 10px;
+}
+
+hr {
+    border-top: 1px solid var(--lightgray)
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    margin: 4px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 4px;
+}
+
+
+.logoNav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 10% !important;
+    align-items: center;
+    padding: 20px;
+}
+
+.logoNav > i {
+    width: 8%;
+}
+
+.row button {
+    padding: 8px;
+} 
+
+.center {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.topnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: #1f2631;
+    max-height: 108px;
+    float: left;
+    border-radius: 4px 4px 0px 0px;
+    border-bottom: 2px solid var(--hover);
+}
+
+.logo {
+    color: white;
+    font-size: 40px;
+    margin: 5px;
+    margin-left: 5%;
+    margin-right: 32px !important;
+}
+
+.topnav p {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 13%;
+    margin: 5;
+    text-align: center;
+}
+
+.topnav img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.topnav button {
+    margin: 1%;
+    background-color: var(--secondary);
+    border: transparent;
+    color: white;
+    /* width: 10%; */
+    /* height: 4%; */
+    border-radius: 5px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    background-color: var(--secondary);
+    width: 32px;
+    height: 32px;
+    color: white;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+.closebtn i {
+    width: 100%;
+    height: 100%;
+}
+
+.closebtn:hover,
+.topnav button:hover {
+    background-color: var(--hover);
+    cursor: pointer;
+}
+
+.closebtn p {
+    font-size: 20px;
+}
+
+.color-white {
+    color: white;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.horizontal-center {
+    margin: auto;
+    width: 100%;
+    height: 89%;
+    padding: 8px !important;
+    overflow-y: scroll;
+}
+
+.middle-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 30%;
+    height: 100%;
+    background-color: var(--primary);
+    /* border-left: 5px solid var(--hover); */
+    margin: 1.2%;
+    padding: 4px;
+    float: left;
+    border-radius: 3px;
+    overflow-y: scroll;
+}
+
+*::-webkit-scrollbar-thumb {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: var(--hover) !important;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+.middle-box p {
+    color: white;
+}
+
+.middle-box-header {
+    background-color: var(--primary);
+    width: 80%;
+    margin: 3.5%;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.top-wanted {
+    background-color: var(--secondary);
+    width: 80%;
+    height: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    border-radius: 5px;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.top-wanted img {
+    width: 25%;
+    height: 100%;
+}
+
+.top-wanted p {
+    color: white;
+    float: left;
+    margin-left: 2%;
+}
+
+.user {
+    margin: 4px;
+    padding: 8px;
+    cursor: hand;
+    background: var(--secondary);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.user span {
+    color: white;
+}
+
+.search {
+    margin: 4px;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.userDetails {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    height: 100%;
+}
+
+.userCityInfo {
+    background: var(--primary);
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 8px;
+}
+
+.userCityInfo img {
+    border-radius: 8px;
+    margin-right: 8px;
+    height: 64px;
+    width: 64px;
+}
+
+.userCityInfo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.userCityInfo div:last-child {
+    margin-right: 8px;
+}
+
+.verticalHr {
+    width: 4px;
+    height: 90%;
+    background-color: var(--lightgray);
+    border-radius: 16px;
+    margin: 8px 8px 8px 8px;
+}
+
+input {
+    border: 2px solid var(--secondary) !important;
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--primary);
+    box-sizing: border-box;
+    line-height: 1.25rem;
+    transition: all 0.25s;
+    font-family: Arial, FontAwesome;
+}
+
+input[type=text] {
+    border: none;
+}
+
+textarea {
+    border: 2px solid var(--secondary) !important;
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--primary);
+    box-sizing: border-box;
+    line-height: 1.25rem;
+    transition: all 0.25s;
+    font-family: Arial, FontAwesome;
+    resize: vertical;
+}
+
+textarea[type=text] {
+    border: none;
+}
+
+.otherInfoContainer {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border-radius: 4px;
+}
+.otherInfo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 4px;
+    align-self: flex-start;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+}
+
+.otherInfo div {
+    align-self: flex-start;
+    /* background: var(--primary); */
+    display: flex;
+    flex-direction: column;
+    /* margin: 6px; */
+}
+
+
+
+.notesContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 4px;
+}
+.notes {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 4px;
+    align-self: flex-start;
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+}
+
+.notes div {
+    align-self: flex-start;
+    /* background: var(--primary); */
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+}
+
+input, select, textarea {
+    color: white;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+
+::placeholder {
+    color: lightgray;
+}
+
+.criminalInfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.criminalRecordCard {
+    display: flex;
+    flex: 1 0 40%;
+    flex-direction: column;
+    background: var(--primary);
+    border: 2px solid var(--secondary);
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.criminalRecordCard span {
+    font-size: 15px;
+    margin: 4px;
+}
+
+.date {
+    text-align: right;
+    font-size: 14px;
+    color: lightgray;
+}
+
+.notesCard {
+    display: flex;
+    flex: 1 0 15%;
+    flex-direction: column;
+    background: var(--secondary);
+    border-radius: 4px;
+    margin: 0px 2px 4px 0px;
+    /* padding: 16px; */
+}
+
+.notesCard span {
+    font-size: 15px;
+    margin: 4px;
+}
+
+.notesCard span:last-child {
+    text-align: right;
+    font-size: 14px;
+    color: lightgray;
+}
+
+.propertyInfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.propertyContainer {
+    margin: 6px;
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+}
+
+.propertyCard {
+    display: flex;
+    flex: 1 0 15%;
+    flex-direction: column;
+    background: var(--primary);
+    border-radius: 4px;
+    margin: 0px 2px 4px 0px;
+    padding: 24px;
+}
+
+.fas {
+    margin-right: 8px;
+}
+
+.userPersonalInfo {
+    display: flex;
+    flex: 1 0 25%;
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    background: var(--primary);
+}
+
+.userPersonalInfo div {
+    padding: 16px;
+}
+
+.userPersonalInfo img {
+    width: 78px;
+    height: 78px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.citizenInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.citizenInfo span:last-child {
+    color: lightgray;
+}
+
+.userBadge {
+    position: absolute;
+    top: 8;
+    right: 1;
+}
+
+.userProperty span:first-child {
+    font-size: 12px;
+    color: lightgray;
+}
+
+.userInfoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.criminalRecordTitle {
+    border-radius: 2px;
+    text-align: left !important;
+    height: 20px;
+    width: 100%;
+    align-self: flex-start;
+    padding: 16px;
+}
+
+.criminalRecordContent {
+    padding: 16px;
+    margin-right: 8px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+}
+
+.criminalRecordContent p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.peopleInfo {
+    position: absolute;
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    margin: 4px 8px 8px -4px;
+    font-size: 12px;
+}
+
+.peopleInfo div {
+    border-radius: 16px;
+    border: 2px solid var(--secondary);
+    padding: 8px;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background: var(--primary);
+    z-index: 999;
+    border-right: 2px solid var(--secondary);
+}
+
+.sidebar div {
+    cursor: hand;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.sidebar div:first-child {
+    cursor: default;
+}
+
+.sidebar div:last-child {
+    border-bottom: 0px;
+}
+
+.sidebar div:first-child i:last-child {
+    position: absolute;
+    right: 0;
+    margin: 8px;
+}
+
+.wanted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+}
+
+.wanted img {
+    height: 96px;
+    width: 96px;
+    border-radius: 4px;
+}
+
+.wantedInfo {
+    display: flex;
+    font-size: 20px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+    align-self: baseline;
+    justify-content: space-between;
+    margin-left: 8px;
+}
+
+.wantedInfo span {
+    color: white;
+    margin-left: 8px;
+}
+
+.wantedInfo span:last-child {
+    color: lightgray;
+}
+
+.wantedContent {
+    display: flex;
+    margin-top: 8px;
+    padding: 8px;
+    color: white;
+    border-bottom: 2px solid gray;
+}
+
+.wantedInfoContents {
+    display: flex;
+    margin-right: 8px;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-self: center;
+    align-items: flex-end;
+    text-align: right;
+    justify-content: space-between;
+    margin-left: 8px;
+}
+
+.wantedContent span {
+    font-size: 18px;
+}
+
+.reportContents {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 12px;
+}
+
+.reportContents span:last-child {
+    color: lightgray;
+    text-align: right;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 2px solid gray;
+}
+
+.reportContents span:first-child {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+
+.input:focus {
+    width: 50%;
+}
+
+.onlineCops {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    padding: 12px;
+}
+
+.onlineCops img {
+    width: 72px;
+    height: 72px;
+}
+
+.onlineCops div {
+    width: 100%;;
+    justify-self: center;
+    align-self: center;
+}
+
+.onlineCopsDetails {
+    display: flex;
+    font-size: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.copCard {
+    display: flex;
+    flex-direction: row;
+    background: var(--primary);
+    padding: 16px;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+.copCard img {
+    width: 96px;
+    height: 96px;
+    border-radius: 8px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.container .title {
+    font-size: 24px;
+    margin: 12px;
+}
+
+.copCardDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.cops {
+    display: flex;
+    flex-direction: row;
+}
+
+.subNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: calc(100% - 12px);
+    height: 64px;
+    border: 2px solid var(--primary);
+    margin: 6px;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.addReport {
+    background: var(--primary);
+    border-radius: 4px;
+    cursor: hand;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+}
+
+.addReport:hover {
+    background: var(--hover);
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 6px;
+}
+
+.paginationButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 16px;
+    margin: 12px 0px;
+    background: var(--primary);
+    padding: 16px;
+    border-radius: 4px;
+    cursor: hand;
+}
+
+.paginationButton:hover {
+    background: var(--hover);
+}
+
+#pages span {
+    margin: 8px;
+}
+
+.addReportPage .row {
+    justify-content: center;
+    align-items: center;
+}
+
+.addReportPage .row .left {
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    background: var(--primary);
+    display: flex;
+    color: white;
+    flex-direction: row;
+    margin: 0px 16px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.addReportPage .row .left i {
+    font-size: 40px;
+    margin-right: 8px;
+    margin-left: 16px;
+}
+
+.addReportPage .row .column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 4px;
+}
+
+.addReportPage .row .column div {
+    display: flex;
+}
+
+.addReportPage .row .row button {
+    height: 64px;
+    margin: 0px 8px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: 2px solid var(--secondary);
+    cursor: hand;
+}
+
+.addReportPage .row .row button:first-child {
+    background: lightseagreen;
+}
+
+.addReportPage .row .row button:last-child {
+    background: indianred;
+}
+
+.addReportPage .row .row button i {
+    margin: 8px;
+    font-size: 24px;
+}
+
+.addReportpage .row .row button:hover {
+    background: var(--hover);
+}
+
+.addReportPage .row .column span:first-child {
+    font-size: 30px;
+}
+
+.addReportPage .row .column span:last-child {
+    font-size: 12px;
+}
+
+.addReportPage .row .right {
+    background: var(--primary);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.addReportPage .row .right button {
+    font-size: 20px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin: 8px 24px;
+}
+
+#selectPeople div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.selectField {
+    flex-direction: column;
+}
+
+.personContainer {
+    color: white;
+    margin: 12px 0px 0px 0px;;
+    border: 2px solid var(--hover);
+    padding: 8px;
+    cursor: hand;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photoContainer {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.photoContainer i {
+    font-size: 40px;
+    margin: 0px 0px 0px 24px;
+    cursor: hand;
+}
+
+.totalFine {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-top: 8px;
+}
+
+.totalFine div {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.totalFine div span {
+    margin: 4px;
+}
+
+.totalFine div i {
+    font-size: 12px;
+}
+
+.fineAmount {
+    border: none;
+    padding: 4px;
+    margin: 0;
+    width: 48px;
+    font-size: 13px;
+    text-align: center;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    margin-right: 8px;
+}
+
+.fineContainer {
+    color: white;
+    margin: 12px 0px 0px 0px;;
+    border: 2px solid var(--hover);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fineContainer i:last-child {
+    cursor: hand;
+}
+
+datalist {
+    font-family: Arial, FontAwesome;
+}
+
+.row div .reportPhotoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row div .reportPhotoContainer img {
+    margin: 12px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.select2-search {
+    background-color: var(--primary);
+    color: white;
+}
+
+.select2-search input {
+    background-color: var(--primary);
+    color: white;
+}
+
+.select2-results {
+    background-color: var(--primary);
+    color: white;
+}
+
+.select2 {
+    border: 2px solid var(--secondary) !important;
+    width: 100%;
+    font-size: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    background: var(--primary);
+    box-sizing: border-box;
+    line-height: 1.25rem;
+    transition: all 0.25s;
+    font-family: Arial, FontAwesome;
+}
+
+.select2-selection {
+    background: var(--primary) !important;
+    height: auto !important;
+    width: 100%;
+}
+
+.select2-selection__rendered {
+    color: white !important;
+    margin: 12px;
+}
+
+.select2-selection__arrow {
+    margin: 12px;
+}
+
+#zoom-container {
+    margin: auto;
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 16%;
+    z-index: 31;
+}
+
+#zoom-container img {
+    width: 1280px;
+    height: 720px;
+}
+
+.citizen-result-card {
+    display: flex;
+    flex: 1 0 40%;
+    margin: 0px 2px 4px 0px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: var(--primary);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.citizen-result-card img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.citizen-result-card div {
+    display: flex;
+    margin: 8px;
+    flex-direction: column;
+}
+
+.citizen-result-card div span:first-child {
+    font-weight: 700;
+}
+
+.citizen-result-card div span:last-child {
+    color: lightgray;
+}
+
+.report-result-card {
+    display: flex;
+    position: relative;
+    padding: 0px;
+    flex-direction: column;
+    background: var(--primary);
+    border-radius: 4px;
+    margin: 0px 2px 4px 0px;
+}
+
+
+.homepage-box {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.homepage-box-header {
+    margin: 0px 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.homepage-box-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 0 25%;
+    width: 100%;
+}
+
+.homepage-report-box {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 10%;
+    border-right: 2px solid var(--secondary);
+    border-radius: 4px;
+}
+
+.homepage-report-box:last-child {
+    border-right: none;
+}
+
+.homepage-report-box span:first-child {
+    font-weight: 700;
+}
+
+.homepage-report-box span:nth-child(2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.homepage-report-box span:last-child {
+    color: lightgray;
+}
+
+.homepage-report-box span {
+    margin: 4px 0px;
+}
+
+.todays-report-statics {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+}
+
+.something-count {
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn div {
+    padding: 12px;
+    background: var(--secondary);
+    border-radius: 8px;
+    border: 2px solid var(--hover);
+    font-size: 14px;
+}
+
+.btn div:hover {
+    background: var(--hover);
+}
+
+.wanted-container {
+    margin: 8px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wanted-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid gray;
+    padding: 0 !important;
+}
+
+.evidence-contents {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.evidence-card {
+    display: flex;
+    flex: 1 0 40%;
+    flex-direction: column;
+    background: var(--primary);
+    border: 2px solid var(--secondary);
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.evidence-title {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    margin: 16px;
+}
+
+.evidence-field {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 6px 16px;
+}
+
+.evidence-field p:first-child {
+    font-weight: 700;
+}
+
+
+.new-evidence-page .row {
+    justify-content: center;
+    align-items: center;
+}
+
+.new-evidence-page .row .left {
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    background: var(--primary);
+    display: flex;
+    color: white;
+    flex-direction: row;
+    margin: 0px 16px;
+    align-items: center;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.new-evidence-page .row .left i {
+    font-size: 40px;
+    margin-right: 8px;
+    margin-left: 16px;
+}
+
+.new-evidence-page .row .column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 4px;
+}
+
+.new-evidence-page .row .column div {
+    display: flex;
+}
+
+.new-evidence-page .row .row button {
+    height: 64px;
+    margin: 0px 8px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: 2px solid var(--secondary);
+    cursor: hand;
+}
+
+.new-evidence-page .row .row button:first-child {
+    background: lightseagreen;
+}
+
+.new-evidence-page .row .row button:last-child {
+    background: indianred;
+}
+
+.new-evidence-page .row .row button i {
+    margin: 8px;
+    font-size: 24px;
+}
+
+.new-evidence-page .row .row button:hover {
+    background: var(--hover);
+}
+
+.new-evidence-page .row .column span:first-child {
+    font-size: 30px;
+}
+
+.new-evidence-page .row .column span:last-child {
+    font-size: 12px;
+}
+
+.new-evidence-page .row .right {
+    background: var(--primary);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.new-evidence-page .row .right button {
+    font-size: 20px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin: 8px 24px;
+}
+
+.delete:hover {
+    color: lightcoral;
+}
+
+.none {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    font-size: 26px;
+    margin: 8px;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
